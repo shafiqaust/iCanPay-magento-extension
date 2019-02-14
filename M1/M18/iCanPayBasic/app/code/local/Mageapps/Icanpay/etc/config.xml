@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Mageapps_Icanpay>
+            <version>0.0.1</version>
+        </Mageapps_Icanpay>
+    </modules>
+    <frontend>
+        <routers>
+            <mageapps_icanpay>
+                <use>standard</use>
+                <args>
+                    <module>Mageapps_Icanpay</module>
+                    <frontName>icanpay</frontName>
+                </args>
+            </mageapps_icanpay>
+        </routers>
+        <events>
+            <payment_method_is_active>
+                <observers>
+                    <mageapps_icanpay>
+                        <type>singleton</type>
+                        <class>Mageapps_Icanpay_Model_Observer</class>
+                        <method>disableMethod</method>
+                    </mageapps_icanpay>
+                </observers>
+            </payment_method_is_active>
+            <sales_order_place_after>
+            <observers>
+                <auto_invoice_order>
+                    <type>singleton</type>
+                    <class>Mageapps_Icanpay_Model_Observer</class>
+                    <method>implementOrderStatus</method>
+                </auto_invoice_order>
+            </observers>
+        </sales_order_place_after>
+        </events>
+    </frontend>
+    <admin>
+        <routers>
+			<mageapps_icanpay>
+				<use>admin</use>
+				<args>
+					<module>Mageapps_Icanpay</module>
+					<frontName>icanpay</frontName>
+				</args>
+			</mageapps_icanpay>
+        </routers>
+    </admin>
+    <adminhtml>
+		
+		<acl>
+			<resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+				<admin>
+					<children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <mageapps_icanpay>
+                                            <title>Icanpay Module</title>
+                                            <sort_order>10</sort_order>
+                                        </mageapps_icanpay>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+		
+    </adminhtml>   
+    <global>
+        <models>
+            <mageapps_icanpay>
+                <class>Mageapps_Icanpay_Model</class>
+                <resourceModel>mageapps_icanpay_resource</resourceModel>
+            </mageapps_icanpay>
+            <mageapps_icanpay_resource>
+                <class>Mageapps_Icanpay_Model_Resource</class>
+                <entities>
+                    <icanpay>
+                        <table>mageapps_icanpay</table>
+                    </icanpay>
+                </entities>
+            </mageapps_icanpay_resource>
+        </models>
+        <resources>
+            <mageapps_icanpay_setup>
+                <setup>
+                    <module>Mageapps_Icanpay</module>
+                    <class>Mageapps_Icanpay_Model_Resource_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </mageapps_icanpay_setup>
+            <mageapps_icanpay_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </mageapps_icanpay_read>
+            <mageapps_icanpay_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </mageapps_icanpay_write>
+        </resources>
+        <blocks>
+            <mageapps_icanpay>
+                <class>Mageapps_Icanpay_Block</class>
+            </mageapps_icanpay>
+        </blocks>
+        <helpers>
+            <mageapps_icanpay>
+                <class>Mageapps_Icanpay_Helper</class>
+            </mageapps_icanpay>
+        </helpers>
+
+        
+    </global>
+
+
+    <default>
+        <payment>
+            <mageapps_icanpay>
+                <active>0</active>
+                <cctypes>VI,MC</cctypes>
+                <model>mageapps_icanpay/pay</model>
+                <payment_action>authorize_capture</payment_action>
+                <useccv>1</useccv>
+                <title>iCanPay Payment</title>
+                <payment_type>1</payment_type>
+                <allowspecific>0</allowspecific>
+                <order_status>pending</order_status>
+            </mageapps_icanpay>
+        </payment>
+    </default>
+
+
+</config>

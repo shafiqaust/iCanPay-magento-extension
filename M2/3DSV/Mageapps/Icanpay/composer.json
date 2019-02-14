@@ -1,0 +1,37 @@
+{
+    "name": "mageapps/icanpay",
+    "description": "Mageapps iCanPay Card plugin for M2.1",
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "license": [
+        "OSL-3.0"
+    ],
+    "require": {
+        "php": ">=5.5.0",
+        "magento/magento-composer-installer": "*"
+    },
+    "authors": [
+        {
+            "name": "Shafiq Zaman",
+            "email": "shafiqaust@gmail.com",
+            "homepage": "http://www.pixelnettech.com/",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Mageapps\\Icanpay\\": ""
+        }
+    },
+    "extra": {
+        "map": [
+            [
+                "*",
+                "Mageapps/Icanpay"
+            ]
+        ]
+    }
+}

@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<config>
+    <sections>
+        <payment>
+            <groups>
+                <mageapps_icanpay translate="label" module="mageapps_icanpay">
+                        <label>iCanPay Payment</label>
+                        <frontend_type>text</frontend_type>
+                        <sort_order>84</sort_order>
+                        <show_in_default>1</show_in_default>
+                        <show_in_website>0</show_in_website>
+                        <show_in_store>0</show_in_store>
+                        <comment><![CDATA[<b>iCanPay</b> works by adding credit card fields on the checkout and then sending the details to <b>iCanPay</b> for credit card payment verification and processing.]]></comment>
+                        <fields>
+                            <active translate="label">
+                                <label>Enabled/Disable</label>
+                                <frontend_type>select</frontend_type>
+                                <source_model>adminhtml/system_config_source_yesno</source_model>
+                                <sort_order>1</sort_order>
+                                <show_in_default>1</show_in_default>
+                                <show_in_website>0</show_in_website>
+                                <show_in_store>0</show_in_store>
+                                <comment><![CDATA[Enable <b>iCanPay</b> Payment Gateway]]></comment>
+                            </active>
+                            <title translate="label">
+                                <label>Title</label>
+                                <frontend_type>text</frontend_type>
+                                <sort_order>10</sort_order>
+                                <show_in_default>1</show_in_default>
+                                <show_in_website>0</show_in_website>
+                                <show_in_store>0</show_in_store>
+                            </title>
+                            <payment_type translate="label">
+                                <label>Payment Type</label>
+                                <frontend_type>select</frontend_type>
+                                <source_model>mageapps_icanpay/source_type</source_model>
+                                <sort_order>15</sort_order>
+                                <show_in_default>1</show_in_default>
+                                <show_in_website>0</show_in_website>
+                                <show_in_store>0</show_in_store>
+                            </payment_type>
+                            
+                            <authenticate_id translate="label">
+                                <label>Authenticate ID</label>
+                                <frontend_type>text</frontend_type>
+                                <sort_order>16</sort_order>
+                                <show_in_default>1</show_in_default>
+                                <show_in_website>0</show_in_website>
+                                <show_in_store>0</show_in_store>
+                                <comment><![CDATA[Your Authenticate ID.]]></comment>
+                            </authenticate_id>
+                            <authenticate_pw translate="label">
+                                <label>Authenticate Password</label>
+                                <frontend_type>text</frontend_type>
+                                <sort_order>17</sort_order>
+                                <show_in_default>1</show_in_default>
+                                <show_in_website>0</show_in_website>
+                                <show_in_store>0</show_in_store>
+                                <comment><![CDATA[Your Authenticate Password.]]></comment>
+                            </authenticate_pw>
+                            <sec_key translate="label">
+                                <label>Secret Key</label>
+                                <frontend_type>text</frontend_type>
+                                <sort_order>18</sort_order>
+                                <show_in_default>1</show_in_default>
+                                <show_in_website>0</show_in_website>
+                                <show_in_store>0</show_in_store>
+                                <comment><![CDATA[Your Secret Key.]]><![CDATA[<br /><br />Note: <br />The three credentials you see above are for demonstration purposes only.If you applied for an account, you must enter your own unique credentials above when you receive them to make your account LIVE.<br /> <br />Make sure iCanPay is enabled and you've disabled all other payment methods for your tests as well as making sure iCanPay is in the first portion on the Gateway Display Order under the Checkout Option.<br /><br />You can check your test transactions at <br /> <i onclick="javascript:window.open('https://pay.icanpay.cn.com/pay',
+  '_blank')">https://pay.icanpay.cn.com/pay<i/><br/><strong>user: demo@icanpay.cn.com<strong/><br/><strong>pass: demo123<strong/><br />Use the following demo credit card numbers for your test: <br/><strong>Card Number: 4111-1111-1111-1111<strong/><br/><strong>Expiration: Anything in the Future<strong/><br/><strong>CVV2: 123<strong/>]]></comment>
+                            </sec_key>
+                            
+                            <payment_action translate="label">
+                                <label>Payment Action</label>
+                                <frontend_type>select</frontend_type>
+                                <source_model>mageapps_icanpay/source_paymentAction</source_model>
+                                <sort_order>50</sort_order>
+                                <show_in_default>1</show_in_default>
+                                <show_in_website>0</show_in_website>
+                                <show_in_store>0</show_in_store>
+                            </payment_action>
+                            <cctypes translate="label">
+                                <label>Credit Card Types</label>
+                                <frontend_type>multiselect</frontend_type>
+                                <source_model>mageapps_icanpay/source_cctype</source_model>
+                                <sort_order>115</sort_order>
+                                <show_in_default>1</show_in_default>
+                                <show_in_website>0</show_in_website>
+                                <show_in_store>0</show_in_store>
+                            </cctypes>
+                            <allowspecific translate="label">
+                                <label>Payment from Applicable Countries</label>
+                                <frontend_type>allowspecific</frontend_type>
+                                <sort_order>120</sort_order>
+                                <source_model>adminhtml/system_config_source_payment_allspecificcountries</source_model>
+                                <show_in_default>1</show_in_default>
+                                <show_in_website>0</show_in_website>
+                                <show_in_store>0</show_in_store>
+                            </allowspecific>
+                            <specificcountry translate="label">
+                                <label>Payment from Specific Countries</label>
+                                <frontend_type>multiselect</frontend_type>
+                                <sort_order>130</sort_order>
+                                <source_model>adminhtml/system_config_source_country</source_model>
+                                <show_in_default>1</show_in_default>
+                                <show_in_website>0</show_in_website>
+                                <show_in_store>0</show_in_store>
+                                
+                            </specificcountry>
+                            
+                            
+                    </fields>
+
+                </mageapps_icanpay>
+
+            </groups>
+        </payment>
+    </sections>
+</config>

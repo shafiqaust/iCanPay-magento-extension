@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+    </default>
+    <mageapps_icanpay_index_index>
+        <reference name="content">
+            <block type="mageapps_icanpay3dsv/icanpay" name="mageapps_icanpay3sv" template="icanpay3dsv/icanpay.phtml" />
+        </reference>
+    </mageapps_icanpay_index_index>
+</layout>

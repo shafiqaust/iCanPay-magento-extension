@@ -1,0 +1,11 @@
+1. Create 'app/code/' directory if it is not available.
+2. Place 'Payment' into 'app/code/' directory. [Ex: {MagentoDirectory}/app/code/{Payment}/]
+3. write some command line 
+php bin/magento setup:upgrade
+php bin/magento cache:clean
+rrm -rf var/cache/* var/log/* var/report/* pub/static/* generated/* var/view_preprocessed/*
+
+
+4. After those commands enable your extension from admin panel with credentials and serve frontend on checkout page.
+
+5. Bingo!

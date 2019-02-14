@@ -1,0 +1,13 @@
+<?php 
+class Mageapps_Icanpay3dsv_Model_Source_PaymentAction
+{
+    public function toOptionArray()
+    {
+        return array(
+            array(
+                'value' => 'authorize_capture',
+                'label' => Mage::helper('mageapps_icanpay3dsv')->__('Authorize and Capture')
+            ),
+        );
+    }
+}

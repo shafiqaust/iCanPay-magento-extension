@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="payment">
+            <group id="payment_icanpay" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>iCanPay (Credit Card)</label>
+                <comment><![CDATA[<b>iCanPay</b> works by adding credit card fields on the checkout and then sending the details to <b>iCanPay</b> for credit card payment verification and processing.]]></comment>
+                <field id="active" translate="label" type="select" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled/Disabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[Enable <b>iCanPay</b> Payment Gateway]]></comment>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Title</label>
+                </field>
+                <field id="payment_action" translate="label" type="select" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Transaction Type</label>
+                    <source_model>Payment\Icanpay\Model\Source\TransactionType</source_model>
+                </field>
+                <field id="cctypes" translate="label" type="multiselect" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Credit Card Types</label>
+                    <source_model>Payment\Icanpay\Model\Source\Cctype</source_model>
+                </field>
+                <field id="allowspecific" translate="label" type="allowspecific" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Payment from Applicable Countries</label>
+                    <source_model>Magento\Payment\Model\Config\Source\Allspecificcountries</source_model>
+                </field>
+                <field id="specificcountry" translate="label" type="multiselect" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Payment from Specific Countries</label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                </field>
+                <field id="currency" translate="label" type="select" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Accepted Currency</label>
+                    <source_model>Magento\Config\Model\Config\Source\Locale\Currency</source_model>
+                </field>
+                <field id="authenticate_id" translate="label" type="text" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Authenticate ID</label>
+                    <comment><![CDATA[Your Authenticate ID.]]></comment>
+                </field>
+                <field id="authenticate_pw" translate="label" type="text" sortOrder="8" showInDefault="1" showInWebsite="1" showInStore="0">
+                   <label>Authenticate Password</label>
+                    <comment><![CDATA[Your Authenticate Password.]]></comment>
+                </field>
+                <field id="sec_key" translate="label" type="text" sortOrder="9" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Secret Key</label>
+                    <comment><![CDATA[Your Secret Key.]]><![CDATA[<br /><br /><b>Note: </b><br /><br />The three credentials you see above are for demonstration purposes only.If you applied for an account, you must enter your own unique credentials above when you receive them to make your account LIVE.<br /> <br />Make sure iCanPay is enabled and you've disabled all other payment methods for your tests as well as making sure iCanPay is in the first portion on the Gateway Display Order under the Checkout Option.<br /><br />You can check your test transactions at <br /> <i onclick="javascript:window.open('https://pay.icanpay.cn.com/pay',
+  '_blank')">https://pay.icanpay.cn.com/pay<i/><br/><strong>user: demo@icanpay.cn.com<strong/><br/><strong>pass: demo123<strong/><br />Use the following demo credit card numbers for your test: <br/><strong>Card Number: 4111-1111-1111-1111<strong/><br/><strong>Expiration: Anything in the Future<strong/><br/><strong>CVV2: 123<strong/>]]></comment>
+                </field>
+                
+            </group>
+        </section>
+    </system>
+</config>

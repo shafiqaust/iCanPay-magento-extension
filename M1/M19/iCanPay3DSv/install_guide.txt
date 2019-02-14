@@ -1,0 +1,19 @@
+1. Create 'local' folder if it is not available in 'app/code/' directory. [Ex: app/code/{local}/]
+2. Place 'Mageapps' folder to app/code/loal/  [Example: {MagentoDir}/app/code/local/{Mageapps}]
+3. If there is already 'Mageapps' folder then, apply 'Icanpay3dsv' folder into 'Maageapps' folder.[Ex: {MagentoDir}/app/code/local/Mageapps/{Icanpay3dsv}/], Otherwise, apply 'Mageapps' folder directly. [Ex: {MagentoDir}/app/code/local/{Mageapps}/]
+
+
+4. Apply this 'Mage/Core/Model/Email/Template.php' to 'local' folder if it is not available, otherwise move it in on 'local' folder. [Ex: app/code/local/{Mage/Core/Model/Email/Template.php}]
+It helps to send email for new order.
+
+5. app/etc/modules/Mageapps_Icanpay3dsv.xml    to    {MagentoDir}/app/etc/modules/{Mageapps_Icanpay3dsv.xml}
+
+6. app/design/adminhtml/default/default/layout/icanpay3dsv.xml  to {MagentoDir}/app/design/adminhtml/default/default/layout/{icanpay3dsv.xml}
+7. app/design/adminhtml/default/default/template/icanpay3dsv  to   {MagentoDir}/app/design/adminhtml/default/default/template/{icanpay3dsv}/ [Note: icanpay3dsv is a directory]
+8. app/design/frontend/base/default/layout/icanpay3dsv.xml to   {MagentoDir}/app/design/frontend/base/default/layout/{icanpay3dsv.xml}
+9. app/design/frontend/base/default/template/icanpay3dsv to  {MagentoDir}/app/design/frontend/base/default/template/{icanpay3dsv} [Note: icanpay3dsv is a directory]
+10. Remove cache and session from command line or admin panel.
+11. Go to admin panel and navigate to "System->Configuration->Payment Methods"
+12. Put required api credentionls to the iCanPay 3DSv section
+13. This payment option will show in checkout page 
+14. Bingo! 

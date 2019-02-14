@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <payment>
+            <mageapps_icanpay>
+                
+                <active>1</active>
+                <title>iCanPay 3DSv Credit Card</title>
+                
+                <cctypes>AE,VI,MC,DI,JCB</cctypes>
+                
+                <model>Mageapps\Icanpay\Model\CCPayment</model>
+                <order_status>processing</order_status>
+                <payment_action>AUTH</payment_action>
+                
+                <useccv>1</useccv>
+                <usecvv_backend>0</usecvv_backend>
+                <allowspecific>0</allowspecific>
+                <currency>USD</currency>
+            </mageapps_icanpay>
+        </payment>
+    </default>
+</config>
