@@ -1,4 +1,4 @@
-# iCanPayExtension
+# iCanPay Magento Payemnt Extension (M1, M2)
 
 A Custom Payment extension for iCanPay vendor.
 Developed for M 1.7, M 1.8,M 1.9 and M 2.1
